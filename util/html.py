@@ -11,8 +11,8 @@ class http_html(object):
                  Chrome/50.0.2657.3 Safari/537.36'
     })
     html = urllib.request.urlopen(request).read()
-    print(html);
-    html = html.decode('UTF-8')
+    # print(html);
+    html = html.decode('gbk')
     return html
 
 
@@ -20,4 +20,5 @@ class http_html(object):
  def getStackCode(html,s = r'<li><a target="_blank" href="http://quote.eastmoney.com/\S\S(.*?).html">'):
     pat = re.compile(s)
     code = pat.findall(html)
+    print(code)
     return code
